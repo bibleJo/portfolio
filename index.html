@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jo sung kyoung</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,900;1,400;1,500&display=swap" rel="stylesheet">
+    <script src="script/featherlight/featherlight.js"></script>
+    <link rel="stylesheet" href="css/featherlight.css">
+</head>
+
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            sc = $(window).scrollTop(); //현재 스크롤 위치
+            $('#box').text(sc)
+
+            // home scroll event 
+            if(sc >= $('#home').offset().top+1){
+                $('header').css({'position':'fixed','z-index':'2','top':'0','background-color':'#222'})
+            }
+            else{
+                $('header').css({'position':'absolute','backgroundColor':'transparent'})
+            }
+            if(sc >= 0 && sc < 1650){
+                $('.menu > li:nth-child(1)').css({'color':'#932025'}).siblings().css({'color':'#fff'})
+            }
+            else if(sc >= 1650 && sc < 2450){
+                $('.menu > li:nth-child(2)').css({'color':'#932025'}).siblings().css({'color':'#fff'})
+            }
+            else if(sc >= 2450 && sc < 3250){
+                $('.menu > li:nth-child(3)').css({'color':'#932025'}).siblings().css({'color':'#fff'})
+            }
+            else if(sc >= 3250 && sc < 3900){
+                $('.menu > li:nth-child(4)').css({'color':'#932025'}).siblings().css({'color':'#fff'})
+            }
+            else if(sc >= 3900){
+                $('.menu > li:nth-child(5)').css({'color':'#932025'}).siblings().css({'color':'#fff'})
+            }
+
+    //  section event //
+            if(sc >= 500){
+                $('.about_left').animate({'left':'0' , 'opacity':'1'},1500)
+                $('.about_right').animate({'right':'0' , 'opacity':'1'},1500)
+            }
+
+            if(sc >= 1200){
+                $('.skill_list > li').animate({'opacity':'1'},1500)
+                $('.skill_tit').animate({'opacity' : '1'},1500)
+                $('.skill_list>li>p').animate({'marginTop':'30px' , 'opacity':'1'},1500)
+            }
+
+            if(sc >= 2200){
+                $('.mobile_left').animate({'left':'0' , 'opacity':'1'},1500)
+                $('.mobile_right').animate({'right':'0' , 'opacity':'1'},1500)
+            }
+
+            if(sc >= 2800){
+                $('.coding_menu').animate({'marginLeft':'0px' , 'opacity':'1'},1500)
+                $('.coding_showbox').animate({'marginRight':'0' , 'opacity':'1'},1500)
+            }
+        })
+
+    // header menu btn //
+        $('.menu > li:nth-child(1)').click(function(){
+            $('body,html').stop().animate({'scrollTop':0},500)
+        })
+        $('.menu > li:nth-child(2)').click(function(){
+            $('body,html').stop().animate({'scrollTop':1650},500)
+        })
+        $('.menu > li:nth-child(3)').click(function(){
+            $('body,html').stop().animate({'scrollTop':2450},500)
+        })
+        $('.menu > li:nth-child(4)').click(function(){
+            $('body,html').stop().animate({'scrollTop':3250},500)
+        })
+        $('.menu > li:nth-child(5)').click(function(){
+            $('body,html').stop().animate({'scrollTop':3950},500)
+        })
+
+    // home apple mockup btn//
+        $('.home_num > li:nth-child(1)').click(function(){
+            $('.imac_img > li').hide()
+            $('.ipad_img > li').hide()
+            $('.imac_img > li:nth-child(1)').fadeIn()
+            $('.ipad_img > li:nth-child(1)').fadeIn()
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+        })
+        $('.home_num > li:nth-child(2)').click(function(){
+            $('.imac_img > li').hide()
+            $('.ipad_img > li').hide()
+            $('.imac_img > li:nth-child(2)').fadeIn()
+            $('.ipad_img > li:nth-child(2)').fadeIn()
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+        })
+        $('.home_num > li:nth-child(3)').click(function(){
+            $('.imac_img > li').hide()
+            $('.ipad_img > li').hide()
+            $('.imac_img > li:nth-child(3)').fadeIn()
+            $('.ipad_img > li:nth-child(3)').fadeIn()
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+        })
+        $('.home_num > li:nth-child(4)').click(function(){
+            $('.imac_img > li').hide()
+            $('.ipad_img > li').hide()
+            $('.imac_img > li:nth-child(4)').fadeIn()
+            $('.ipad_img > li:nth-child(4)').fadeIn()
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+        })
+
+        // coding click event 
+        $('.coding_menu > li:nth-child(1)').click(function(){
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+            $('.coding_showbox > li').fadeOut()
+            $('.coding_showbox > li:nth-child(1)').fadeIn()
+        })
+        $('.coding_menu > li:nth-child(2)').click(function(){
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+            $('.coding_showbox > li').fadeOut()
+            $('.coding_showbox > li:nth-child(2)').fadeIn()
+        })
+        $('.coding_menu > li:nth-child(3)').click(function(){
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+            $('.coding_showbox > li').fadeOut()
+            $('.coding_showbox > li:nth-child(3)').fadeIn()
+        })
+        $('.coding_menu > li:nth-child(4)').click(function(){
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+            $('.coding_showbox > li').fadeOut()
+            $('.coding_showbox > li:nth-child(4)').fadeIn()
+        })
+        $('.coding_menu > li:nth-child(5)').click(function(){
+            $(this).css({'color':'#932025'})
+            $(this).siblings().css({'color':'#fff'})
+            $('.coding_showbox > li').fadeOut()
+            $('.coding_showbox > li:nth-child(5)').fadeIn()
+        })
+        // web publishing //
+        $('.web_menu>li:nth-child(1)').click(function(){
+            $('.web_inner>li').fadeOut()
+            $('.web_inner>li:nth-child(1)').fadeIn()
+        })
+        $('.web_menu>li:nth-child(2)').click(function(){
+            $('.web_inner>li').fadeOut()
+            $('.web_inner>li:nth-child(2)').fadeIn()
+        })
+        $('.web_menu>li:nth-child(3)').click(function(){
+            $('.web_inner>li').fadeOut()
+            $('.web_inner>li:nth-child(3)').fadeIn()
+        })
+        $('.web_menu>li:nth-child(4)').click(function(){
+            $('.web_inner>li').fadeOut()
+            $('.web_inner>li:nth-child(4)').fadeIn()
+        })
+        $('.web_menu>li:nth-child(5)').click(function(){
+            $('.web_inner>li').fadeOut()
+            $('.web_inner>li:nth-child(5)').fadeIn()
+        })
+        
+
+
+        
+    })
+</script>
+
+<style>
+    /* common */
+    *{margin: 0; padding: 0; list-style: none; color: #fff; font-family: 'Kanit', sans-serif; font-weight: 400;}
+    body {background-color : #000;}
+    a {text-decoration: none; font-size: 14px;}
+    .wrap {width: 1200px; margin: auto;}
+    .name {float: left; font-size: 16px; font-weight: 400;}
+    .title {font-size: 60px; -webkit-text-stroke: 1.5px #fff; color: transparent; padding: 100px 0 0; font-weight: 900; position: relative; clear: both;}
+    .title::before {width: 320px; height: 5px; background: url(images/icon/title_before.png); content: ""; position: absolute; top: 145px; left: -350px;}
+
+    /* header , menu */
+    header {width: 100%; height: 60px; overflow: hidden; line-height: 60px; position: absolute; left: 0; top: 0;}
+    .menu {float: right;}
+    .menu > li {float: left; margin-left: 30px; font-size: 16px; cursor: pointer; font-weight: 500;}
+    .menu > li:nth-child(1) {color: #932025;}
+
+    /* home */
+    #home {width: 100%; height: 1000px; overflow: hidden; background-color: rgba(255, 255, 255, 0.3);}
+    .home_text {width: 1200px; height: 460px; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; text-align: left; z-index: 1;}
+    .home_text > p {font-size: 18px; font-weight: 600; color: #932025;}
+    .home_text > h2 {font-size: 60px; padding: 10px 0; line-height: 60px; font-weight: 900;}
+    .home_text > h2 > span {-webkit-text-stroke: 1px #fff; color: transparent; font-weight: 900;}
+    .apple_mockup {width: 1200px; margin: auto; text-align: center; position: relative; opacity: 0.7;}
+    #imac {margin-top: 160px;}
+    #ipad {position: absolute; left: 0; bottom: 0;}
+    .home_num {position: absolute; top: 100px; right: 0;}
+    .home_num > li {transform: rotate(90deg); line-height: 40px; font-weight: 500; cursor: pointer;}
+    .home_num > li:nth-child(1) {color: #932025;}
+    .imac_img {position: absolute; left: 204px; top: 33px;}
+    .imac_img > li {position: absolute; display: none;}
+    .imac_img > li:nth-child(1) {display: inline;}
+    .ipad_img {position: absolute; left: 21px; top: 38px;}
+    .ipad_img > li {position: absolute; display: none;}
+    .ipad_img > li:nth-child(1) {display: inline;}
+
+    /* about */
+    .inner {clear: both;}
+    .about_left {width: 600px; position: relative; float: left; left: -300px; opacity: 0;}
+    .about_left::after {content: "28"; position: absolute; left: 0; top: -160px; font-size: 560px; font-weight:600; opacity: 0.3; letter-spacing: -50px; z-index: -1;}
+    .profile {width: 300px; margin-left: 100px; margin-top: 50px;}
+    .about_right {width: 600px; float: right; position: relative; right: -300px; opacity: 0;}
+    .about_right > h2 {font-size: 50px; margin-top: 50px;}
+    .about_right > h2 > span {-webkit-text-stroke: 1px #fff; color: transparent;}
+    .about_right > p {width: 500px; font-size: 16px; margin-top: 60px; line-height: 24px;}
+    .about_right > p > span {color: #932025;}
+    .about_right > .license {margin-top: 60px;}
+    .about_right > .license > li {float: left; margin-right: 30px;}
+    .about_right > .license > li > h3 {font-size: 15px; height: 45px;}
+    .about_right > .license > li > p {font-size: 14px; opacity: 0.5;}
+
+    /* skill */
+    .skill_list{width: 100%; margin-top: 60px;overflow: hidden;}
+    .skill_list > li {width: 33.333%; height: 300px; float: left;text-align: center; border-bottom: 1px solid #aaa; padding-top: 20px; box-sizing: border-box; opacity: 0;}
+    .skill_list > li:nth-child(2), .skill_list > li:nth-child(5) {border-left: 1px solid #aaa; border-right: 1px solid #aaa;}
+    .skill_list > li:nth-child(n+4) {border-bottom: none;}
+    .skill_list > li > p {width: 90%;margin: auto; font-size: 14px; margin-top: 100px; opacity: 0;}
+    .skill_tit {width: 100px; height:100px; border-radius: 100px; border: 2px solid #fff; margin: auto; opacity: 0;}
+    .skill_tit > h3 {font-size: 16px; margin-top: 33px; font-weight: 500;}
+
+    /* mobile app */
+    .mobile_left {width: 600px; position: relative; float: left; left: -300px; opacity: 0;}
+    .mobile_right {width: 600px; float: right; position: relative; right: -300px; opacity: 0;}
+    .mobile_right > h2 {font-size: 50px; margin-top: 100px;}
+    .mobile_right > p {width: 500px; font-size: 16px; margin-top: 60px; line-height: 24px;}
+    .nespresso {margin-top: 50px;}
+    .list {margin-top: 30px; margin-bottom: 30px;}
+    .list > li {position: relative; margin-left: 30px; font-size: 14px;}
+    .list > li::before {background: url(images/icon/list_icon.png); width: 14px; height: 4px; content: ""; position: absolute; left: -30px; top: 8px;}
+    .btn {display: inline; position: relative;}
+    .btn_line {width: 0; height: 1px; background-color: #fff; transition: 0.5s; margin-top: 5px; position: absolute; left: 0; top: 20px;}
+    .btn:hover > .btn_line {width: 100%;}
+
+    /* coding */
+    .coding_menu { margin-top: 100px; float: left;opacity: 0; position: relative; margin-left: -100px;}
+    .coding_menu > li {margin-bottom: 50px; font-weight: 600; cursor: pointer;}
+    .coding_menu > li:nth-child(1) {color: #932025;}
+    .coding_menu > li:nth-child(5) {margin-bottom: 0;}
+    .coding_showbox {position: relative; margin-right: -100px; opacity: 0;}
+    .coding_showbox > li {position: absolute; right: 0; top: 110px; display: none;}
+    .coding_showbox > li:nth-child(1) {display: inline-block;}
+    .coding_show > li {float: left; margin-left: 50px; background-color: #000; position: relative; cursor: pointer;}
+    .coding_imgbox {width: 300px; height: 300px; border-radius: 10px; overflow: hidden;}
+    .coding_imgbox > img {transition: 0.5s; opacity: 0.3;}
+    .coding_imgbox:hover > img {opacity: 0.7; transform: scale(1.1);}
+    .txt {position: absolute;left: -10px; bottom: -20px;}
+    .txt > h4 {font-size: 22px; font-weight: 600;}
+    .txt > p {color: #932025; font-weight: 500;}
+
+    /* web ui publishing  */
+    .web_menu {margin-top: 60px;}
+    .web_menu > li {display: inline-block; margin: 0 80px; cursor: pointer;}
+    .web_inner {width: 800px; margin: auto; margin-top: 60px; position: relative;}
+    .web_inner > li {position: absolute; text-align: center; left: 0; top: 0; display: none;}
+    .web_inner > li:nth-child(1) {display: block;}
+    .web_box {height: 400px; border-radius: 10px; margin: auto; overflow: hidden;}
+    .web_inner > li > h3 {margin-top: 30px; font-size: 16px;}
+    .web_inner > li > p {width: 800px; margin: auto; margin-top: 30px; font-size: 15px;}
+    #btn_1 {float: right; margin-top: -40px; margin-right: 100px;}
+    #btn_2 {float: right; margin-top: -40px;}
+    .list {text-align: left;}
+    
+    /*  */
+    #box{width: 200px; height: 100px; z-index: 999;position: fixed; left: 0; top: 0; background-color: pink; text-align: center; color: #000; line-height: 100px; font-size: 50px;}
+</style>
+
+<body>
+    <!-- header 시작 -->
+    <header>
+        <div class="wrap">
+            <h2 class="name">Jo sung kyoung</h2>
+            <ul class="menu">
+                <li>HOME</li>
+                <li>SKILL</li>
+                <li>MOBILE WEB APP</li>
+                <li>CODING</li>
+                <li>WEB UI & PUBLISHING</li>
+            </ul>
+        </div>
+    </header>
+    <!-- header 끝 -->
+
+    <!-- home 시작 -->
+    <div id="home">
+        <div class="wrap">
+            <div class="home_text">
+                <p>HELLOW,</p>
+                <h2>Publishing &<br><span>ui/ux design</span></h2>
+                <p>WATCH PROJECT</p>
+                <ul class="home_num">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                </ul>
+            </div>
+            <div class="apple_mockup">
+                <div id="imac">
+                    <img src="images/imac.png" alt="" class="imac">
+                    <ul class="imac_img">
+                        <li><img src="images/imac_img1.jpg" alt=""></li>
+                        <li><img src="images/imac_img2.jpg" alt=""></li>
+                        <li><img src="images/imac_img3.jpg" alt=""></li>
+                        <li><img src="images/imac_img4.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div id="ipad">
+                    <img src="images/ipad.png" alt="" class="ipad">
+                    <ul class="ipad_img">
+                        <li><img src="images/ipad_img1.jpg" alt=""></li>
+                        <li><img src="images/ipad_img2.jpg" alt=""></li>
+                        <li><img src="images/ipad_img3.jpg" alt=""></li>
+                        <li><img src="images/ipad_img4.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- home 끝 -->
+
+    <!-- about 시작 -->
+    <div class="wrap">
+        <h2 class="title">About</h2>
+        <div class="inner">
+            <div class="about_left">
+                <img src="images/profile.png" alt="" class="profile">
+            </div>
+            <div class="about_right">
+                <h2><span>I'm</span> Jo sung kyoung</h2>
+                <p>안녕하세요, 저는 <span>강한 책임감과 열정</span>을 지닌 신입  퍼블리셔 조성경 입니다. 저는 퍼블리셔라는 직업에 흥미를 느끼고 새로운 시작을 하게 되어 따라잡기가 아닌 <span>전보다 나은 사이트 구축</span>을 선구합니다. 사용자 입장에서 쉽게 접근할 수 있는 웹 구축을 위해 <span>팀원들과 소통</span>하며 구조화된 마크업을 목표로 하고 있습니다. 저에게 코딩이란 <span>부지런하게 삶을 살 수 있게 하는 원동력</span>과도 같으며 잘하고 싶어 노력하는 일이기도 합니다. 더 한발 나아가기 위해 끊임없이 노력하며 <span>늘 배우고 탐구하는 자세</span>로 소통과 기획능력까지 갖춘 웹퍼블리셔가 되겠습니다. </p>
+                <ul class="license">
+                    <li>
+                        <h3>컴퓨터그래픽스<br>운용기능사</h3>
+                        <p>2022.04</p>
+                    </li>
+                    <li>
+                        <h3>웹디자인기능사</h3>
+                        <p>2022.04</p>
+                    </li>
+                    <li>
+                        <h3>GTQ 1급</h3>
+                        <p>2022.01</p>
+                    </li>
+                    <li>
+                        <h3>GTQ i 1급</h3>
+                        <p>2022.01</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- about 끝 -->
+
+    <!-- skill 시작 -->
+    <div class="wrap">
+        <h2 class="title">Skill</h2>
+        <ul class="skill_list">
+            <li>
+                <div class="skill_tit">
+                    <h3>HTML</h3>
+                </div>
+                <p>웹 표준과 웹 접근성을 준수하는 HTML 정보 구조설계로 웹사이트 퍼블리싱을 해오고 있습니다. 특히 웹 표준을 위해 HTML5에서 권장하는 마크업 방식과 시멘틱 태그를 사용해 전체 레이아웃을 설계합니다. 웹 UI 디자인 작업 후 클래스 네임과 함께 HTML 구조설계를 꼼꼼히 작업한 후 퍼블리싱 작업을 진행합니다.</p>
+            </li>
+            <li>
+                <div class="skill_tit">
+                    <h3>CSS</h3>
+                </div>
+                <p>CSS 코딩은 IE를 지원도 충분히 고려하는 크로스브라우징(Cross Browsing)을 위해 안정적인 CSS속성을 사용해서 HTML Elements를 배치하고 디자인합니다. 특별한 경우 CSS3에서 새롭게 지원하는 속성을 활용해서 좀 더 다양한 CSS 배치와 디자인을 합니다. </p>
+            </li>
+            <li>
+                <div class="skill_tit">
+                    <h3>JQUERY</h3>
+                </div>
+                <p>네비게이션, 탭 메뉴, 아코디언 등 웹 퍼블리싱에 반드시 필요한 상호작용을 위한 제이쿼리는 플러그인을 사용하지 않고 순수한 제이쿼리 코딩으로 제작합니다. 필수적인 자바스크립트 활용은 가능하며 주로 제이쿼리와 병행해서 활용합니다.(if 조건문, for 반복문 등)</p>
+            </li>
+            <li>
+                <div class="skill_tit">
+                    <h3>RESPONSIVE WEB</h3>
+                </div>
+                <p>반응형 웹 제작에 있어서 크로스브라우징(Cross Browsing)을 위해 안정적인 기존 방식인 float, position, Media Query 를 활용한 반응형 웹 제작 경험을 충분히 가지고 있습니다. 필요에 따라 플렉스(Flex)와 그리드(Grid) 방식으로 반응형 웹 사이트 제작도 충분히 가능합니다. 대부분 기존 방식으로 제작하지만 모바일 웹 앱 제작의 경우 Flex와 Grid를 충분히 활용해서 제작합니다.  </p>
+            </li>
+            <li>
+                <div class="skill_tit">
+                    <h3>MOBILE WEB APP</h3>
+                </div>
+                <p>모바일 우선을 위해 Mobile First에 준하는 모바일 웹 앱 제작 경험도 충분히 가지고 있습니다. UI/UX 측면에서 미적인 디자인 뿐만 아니라 모바일 사용자 경험에 최적화를 위해 효율적인 컨텐츠 배치를 우선적으로 생각합니다. 그리고 모바일 대응을 위한 플랫폼으로 반응형 웹, 모바일 웹, 모바일 웹 앱, 네이티브 앱에 대한 충분한 이해도를 갖고 있습니다.</p>
+            </li>
+            <li>
+                <div class="skill_tit">
+                    <h3>TEXT Editor</h3>
+                </div>
+                <p>웹 퍼블리셔로서 텍스트에디터는 Visual Studio Code를 메인으로 사용하며 경우에 따라 Adobe Brackeets를 병행해서 사용합니다. 간단한 부분 수정을 위해 EditPlus, NotePad++ 도 활용합니다.</p>
+            </li>
+        </ul>
+    </div>
+    <!-- skill 끝 -->
+
+    <!-- mobile web app 시작 -->
+    <div class="wrap">
+        <h2 class="title">Mobile web APP</h2>
+        <div class="inner">
+            <div class="mobile_left">
+                <img src="images/nespresso.jpg" alt="" class="nespresso">
+            </div>
+            <div class="mobile_right">
+                <h2>nespresso</h2>
+                <p>NESPRESSO 브랜드에 모바일 웹앱을 만들어 구매효과와 홍보효과를 높이며 메뉴 구성에서 사진과 텍스트를 적절하게 잘 배치하여 사용자에게 정보를 직관적으로 전달한다.</p>
+                <ul class="list">
+                    <li>제작방식 : HTML + CSS + JQUERY + SLICK</li>
+                    <li>UI 디자인 방식 : Photoshop</li>
+                    <li>제작참여율 : 100%</li>
+                </ul>
+                <div class="btn">
+                    <a href="https://biblejo.github.io/mobile-web-app/" data-featherlight="iframe">Read more</a>
+                    <div class="btn_line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile web app 끝 -->
+
+    <!-- coding 시작 -->
+    <div class="wrap">
+        <h2 class="title">Coding</h2>
+        <div class="inner">
+            <ul class="coding_menu">
+                <li>PROTOTYPE</li>
+                <li>TAB MENU</li>
+                <li>HOVER FX</li>
+                <li>CARD UI</li>
+                <li>ANIMATION</li>
+            </ul>
+            <ul class="coding_showbox">
+                <li>
+                    <ul class="coding_show">
+                        <li>
+                            <a href="https://biblejo.github.io/youtube-page/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/prototype1.png" alt="">
+                                </div>
+                                
+                                <div class="txt">
+                                    <h4>YOUTUBE FAQ PAGE</h4>
+                                    <p>#HTML #CSS #jQUERY</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/laneige-page/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/prototype2.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>LANEIGE LANDING PAGE</h4>
+                                    <p>#HTML #CSS #jQUERY</p>
+                                </div>
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/naver-page/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/prototype3.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>NAVER LOGIN PAGE</h4>
+                                    <p>#HTML #CSS</p>
+                                </div> 
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="coding_show">
+                        <li>
+                            <a href="https://biblejo.github.io/tab1/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/tab1.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>TAB MENU #1</h4>
+                                    <p>#HTML #CSS #jQUERY</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/tab2/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/tab2.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>TAB MENU #2</h4>
+                                    <p>#HTML #CSS</p>
+                                </div> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/tab3/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/tab3.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>TAB MENU #3</h4>
+                                    <p>#HTML #CSS</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="coding_show">
+                        <li>
+                            <a href="https://biblejo.github.io/hover1/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/hover1.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>APP 3D HOVER</h4>
+                                    <p>#HTML #CSS</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/hover2/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/hover2.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>SPILT HOVER</h4>
+                                    <p>#HTML #CSS</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/hover3/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/hover3.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>ROTATE HOVER</h4>
+                                    <p>#HTML #CSS</p>
+                                </div> 
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="coding_show">
+                        <li>
+                            <a href="https://biblejo.github.io/card1/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/card1.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>CARD UI #1</h4>
+                                    <p>#HTML #CSS</p>
+                                </div> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/card2/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/card2.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>CARD UI #2</h4>
+                                    <p>#HTML #CSS</p>
+                                </div> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/card3/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/card3.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>CARD UI #3</h4>
+                                    <p>#HTML #CSS</p>
+                                </div> 
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="coding_show">
+                        <li>
+                            <a href="https://biblejo.github.io/animation1/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/animation1.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>ANIMATION #1</h4>
+                                    <p>#HTML #CSS #jQUERY</p>
+                                </div>
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/animation2/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/animation2.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>ANIMATION #2</h4>
+                                    <p>#HTML #CSS #jQUERY</p>
+                                </div> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://biblejo.github.io/animation3/" data-featherlight="iframe">
+                                <div class="coding_imgbox">
+                                    <img src="images/animation3.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>ANIMATION #3</h4>
+                                    <p>#HTML #CSS #jQUERY</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- coding 끝 -->
+
+    <!-- web ui publishing 시작 -->
+    <div class="wrap">
+        <h2 class="title">Web UI Publishing</h2>
+        <ul class="web_menu">
+            <li>BTS
+            </li>
+            <li>Tiffany & Co.
+            </li>
+            <li>Aquarium Tour
+            </li>
+            <li>-
+            </li>
+            <li>-
+            </li>
+        </ul>
+        <ul class="web_inner">
+            <li>
+                <div class="web_box">
+                    <img src="images/web_site1.jpg" alt="">
+                </div>
+                <h3>BTS : RESPONSIVE WEB</h3>
+                <p> 빌보드 핫 100 1위를 차지한 최초이자 유일한 대한민국의 음악 그룹인 방탄소년단의 앨범커버를 주제로  방탄소년단의 프로필을 볼 수 있고,
+                    또한 어떤 디바이스를 이용하든 잘 작동하게 하기 위하여 Responsive Web(반응형 웹)으로 제작하였으며, 제작기간은 2022년 10월 02 ~ 03일 까지입니다.
+                </p>
+                <ul class="list">
+                    <li>제작방식 : HTML + CSS + JQUERY</li>
+                    <li>UI 디자인 방식 : Photoshop</li>
+                    <li>제작참여율 : 100%</li>
+                </ul>
+                <div id="btn_1" class="btn">
+                    <a href="https://biblejo.github.io/bts/" data-featherlight="iframe">MOBILE VER</a>
+                    <div class="btn_line"></div>
+                </div>
+                <div id="btn_2" class="btn">
+                    <a href="https://biblejo.github.io/bts/" data-featherlight="iframe">PC VER</a>
+                    <div class="btn_line"></div>
+                </div>
+                
+            </li>
+            <li>
+                <div class="web_box">
+                    <img src="images/web_site2.jpg" alt="">
+                </div>
+                <h3>Tiffany & Co.</h3>
+                <p>기존 사이트에서 부족했던 정보성 콘텐츠를 중심으로 메인페이지와 상세페이지까지 전부 새롭게 제작하였으며 현재 진행되고 있는 프로모션 혹은 상품에 관한 내용을 고객에게 전달을 빠르게 할 수 있도록 하였습니다. font는 Tai Heritage / Kdam Thmor 와 주 color는 #64b9b2 이며 제작기간은 2022년 09월 24 ~ 09월 30일 까지입니다.</p>
+                <ul class="list">
+                    <li>제작방식 : HTML + CSS + JQUERY + SWIPER</li>
+                    <li>UI 디자인 방식 : Photoshop</li>
+                    <li>제작참여율 : 100%</li>
+                </ul>
+                <div id="btn_2" class="btn">
+                    <a href="https://biblejo.github.io/tiffany/" data-featherlight="iframe">PC VER</a>
+                    <div class="btn_line"></div>
+                </div>
+            </li>
+            <li>
+                <div class="web_box">
+                    <img src="images/web_site3.jpg" alt="">
+                </div>
+                <h3>Aquarium Tour</h3>
+                <p>평소 바다와 물고기를 좋아하여 아쿠아리움을 주제로 선정하여 다른 플러그인 없이 수업하면서 배웠던 jQuery를  사용해보려는 목적으로 만들어보았습니다.  font는 Yanone Kaffeesatz / Ubuntu 와 주 color는 #ffffff , #555555 이며 제작기간은 2022년 09월 19 ~ 09월 22일 까지입니다.</p>
+                <ul class="list">
+                    <li>제작방식 : HTML + CSS + JQUERY</li>
+                    <li>UI 디자인 방식 : Photoshop</li>
+                    <li>제작참여율 : 100%</li>
+                </ul>
+                <div id="btn_2" class="btn">
+                    <a href="https://biblejo.github.io/aquarium/" data-featherlight="iframe">PC VER</a>
+                    <div class="btn_line"></div>
+                </div>
+            </li>
+            <li>
+                <div class="web_box">
+                    <img src="images/working.jpg" alt="">
+                </div>
+                <h3>-</h3>
+                <p>-</p>
+                <ul class="list">
+                    <li>제작방식 : </li>
+                    <li>UI 디자인 방식 : </li>
+                    <li>제작참여율 : </li>
+                </ul>
+                <div id="btn_2" class="btn">
+                    <!-- <a href="#none" data-featherlight="iframe">PC VER</a> -->
+                    <div class="btn_line"></div>
+                </div>
+            </li>
+            <li>
+                <div class="web_box">
+                    <img src="images/working.jpg" alt="">
+                </div>
+                <h3>-</h3>
+                <p>-</p>
+                <ul class="list">
+                    <li>제작방식 : </li>
+                    <li>UI 디자인 방식 : </li>
+                    <li>제작참여율 : </li>
+                </ul>
+                <div id="btn_2" class="btn">
+                    <!-- <a href="#none" data-featherlight="iframe">PC VER</a> -->
+                    <div class="btn_line"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- web ui publishing 끝 -->
+    <div id="box">0</div>
+</body>
+</html>
