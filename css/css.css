@@ -452,7 +452,7 @@
     .list {text-align: left;}
     
     /* 스크롤 위치 알기위한 박스 */
-    /* #box {
+    #box {
         width: 200px;
         height: 100px;
         z-index: 999;
@@ -464,4 +464,5 @@
         color: #000;
         line-height: 100px;
         font-size: 50px;
-        } */
+        display: none;
+        }
